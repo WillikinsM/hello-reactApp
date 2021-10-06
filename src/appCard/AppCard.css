@@ -1,0 +1,64 @@
+.cards {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: stretch;
+  padding: 20px;
+  width: 80%;
+  max-width: 1400px;
+  margin: 5px auto 5px auto;
+}
+
+.covering {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.card-text {
+  background-color: #212529;
+  color: white;
+  font-family: "Segoe UI";
+}
+
+.cards a:hover {
+  color: #000;
+}
+.img-effect1 img {
+  transition: all ease 400ms;
+}
+.img-effect1:hover img {
+  transform: scale(1.07);
+}
+
+.degrade::before {
+  background: transparent;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+a.degrade:hover::before {
+  background: transparent;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #000;
+}
+
+p {
+  font-family: Consolas, sans-serif, Calibri, sans-serif;
+  margin-bottom: 20px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+}

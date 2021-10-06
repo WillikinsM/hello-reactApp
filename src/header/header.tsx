@@ -14,9 +14,10 @@ function HeaderNav() {
             height="45"
             className="d-inline-block align-text-top"
           />
-          <a href="" className="navbar-brand ms-auto">
+          
+          <span className="navbar-brand ms-auto"> 
             Londrina - Setembro de 2021
-          </a>
+          </span>
         </div>
       </nav>
     </header>
