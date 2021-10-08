@@ -1,8 +1,8 @@
 import React from "react";
-import "./Infos.scss";
-import img from "./img/sanjis.png";
+import "./index.scss";
+import img from "../../../../assets/sanjis.png"
 
-function MyInfos() {
+const MyInfos = () => {
   return (
     <>
       <img className="img-sanji" src={img} alt="Sanji-One Piece" height="200" />

@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.scss";
-import img from "./img/ico.jpg";
+import img from "../../assets/ico.jpg";
+
 
 function HeaderNav() {
   return (
