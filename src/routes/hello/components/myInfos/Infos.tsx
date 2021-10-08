@@ -1,5 +1,5 @@
 import React from "react";
-import "./Infos.css";
+import "./Infos.scss";
 import img from "./img/sanjis.png";
 
 function MyInfos() {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./InfoTexts.css";
+import "./InfoTexts.scss";
 
 function TextsInfo() {
   return (

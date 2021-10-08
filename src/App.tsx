@@ -1,27 +1,16 @@
 import React from "react";
 //import logo from './logo.svg';
-import "./App.css";
-import HeaderNav from "./header/header";
-import AppCards from "./appCard/AppCard";
-import MyInfos from "./myInfos/Infos";
-import InfoTexts from "./texts/InfoTexts";
+import "./App.scss";
+import Hello from './routes/hello';
+import HeaderNav from "./components/header";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return (
-    <div className="App">
-      <HeaderNav />
-
-      <div className="cards-div">
-        <AppCards />
-      </div>
-      <div className="personal-infos">
-        <MyInfos />
-      </div>
-      <div className="texts-infos">
-        <InfoTexts />
-      </div>
-    </div>
-  );
+  return (<>
+    <HeaderNav />
+    <Hello/>
+  </>);
 }
 
 export default App;
