@@ -1,11 +1,16 @@
 import React from "react";
 import "./AppCard.css";
+import scrollSmooth from "./scrollSmth";
 
 function AppCards() {
+  let name = ["html-info", "css-info", "javascript-info"];
   return (
     <section className="cards">
       <div className="row row-cols-1 row-cols-md-3 g-4">
-        <a className="card-post covering degrade img-effect1">
+        <span
+          className="card-post img-effect1"
+          onClick={() => scrollSmooth(name[0])}
+        >
           <div className="col">
             <div className="card h-100">
               <img
@@ -26,9 +31,12 @@ function AppCards() {
               </div>
             </div>
           </div>
-        </a>
+        </span>
 
-        <a className="card-post covering degrade img-effect1">
+        <span
+          className="card-post img-effect1"
+          onClick={() => scrollSmooth(name[1])}
+        >
           <div className="col">
             <div className="card h-100">
               <img
@@ -47,9 +55,12 @@ function AppCards() {
               </div>
             </div>
           </div>
-        </a>
+        </span>
 
-        <a className="card-post covering degrade img-effect1">
+        <span
+          className="card-post img-effect1"
+          onClick={() => scrollSmooth(name[2])}
+        >
           <div className="col">
             <div className="card h-100">
               <img
@@ -67,7 +78,7 @@ function AppCards() {
               </div>
             </div>
           </div>
-        </a>
+        </span>
       </div>
     </section>
   );

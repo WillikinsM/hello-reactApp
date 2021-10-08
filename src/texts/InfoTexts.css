@@ -1,0 +1,27 @@
+.img-logos {
+  float: left;
+  width: auto;
+  margin: 3px;
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+.text-paragraph {
+  width: 80%;
+  margin: 100px;
+  margin-left: 13%;
+  margin-top: 3%;
+  padding: 30px;
+}
+
+.text-paragraph.html-text {
+  box-shadow: 0 4px 8px 0 rgb(227 79 42), 0 6px 20px 0 rgb(0 0 0);
+}
+
+.text-paragraph.cascade-text {
+  box-shadow: 0 4px 8px 0 rgb(44 77 228), 0 6px 20px 0 rgb(0 0 0);
+}
+
+.text-paragraph.javascript-text {
+  box-shadow: 0 4px 8px 0 rgb(247 224 24), 0 6px 20px 0 rgb(43 22 22);
+}
