@@ -10,6 +10,7 @@ const hello = () => {
       description:
         "The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser also is a cornerstone technology of the World Wide Web.",
       link: "https://cdn-icons-png.flaticon.com/512/174/174854.png",
+      hre: "#html-info",
     },
     {
       id: "css-info",
@@ -17,6 +18,7 @@ const hello = () => {
       description:
         "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in amarkup language such as HTML also is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
       link: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_960_720.png",
+      hre: "#css-info",
     },
     {
       id: "javascript-info",
@@ -24,6 +26,7 @@ const hello = () => {
       description:
         "JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm.",
       link: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/800px-Unofficial_JavaScript_logo_2.svg.png",
+      hre: "#javascript-info",
     },
   ];
 
@@ -67,6 +70,7 @@ const hello = () => {
               title={item.title}
               description={item.description}
               link={item.link}
+              hre={item.hre}
             />
           ))}
         </div>

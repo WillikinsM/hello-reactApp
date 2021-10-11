@@ -5,23 +5,15 @@ interface Props {
   title: string;
   description: string;
   link: string;
+  hre: string;
 }
 
-const AppCard = ({ title, description, link }: Props) => {
-  //const scrollSmooth = ({id}:Props)=>{
-  //let offset = undefined
-  // offset = document.getElementById(id)?.offsetTop;
-
-  // window.scroll({
-  //  top: offset - 100,
-  // behavior: "smooth",
-  //});
-  //}
-
+const AppCard = ({ title, description, link, hre }: Props) => {
   return (
-    <span
+    <a
       className="card-post img-effect1"
       // onClick={() => scrollSmooth(name[0])}
+      href={hre}
     >
       <div className="col">
         <div className="card h-100">
@@ -32,7 +24,7 @@ const AppCard = ({ title, description, link }: Props) => {
           </div>
         </div>
       </div>
-    </span>
+    </a>
   );
 };
 

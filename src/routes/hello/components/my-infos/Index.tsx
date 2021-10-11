@@ -1,6 +1,5 @@
-import React from "react";
 import "./index.scss";
-import img from "../../../../assets/sanjis.png"
+import img from "../../../../assets/sanjis.png";
 
 const MyInfos = () => {
   return (
@@ -15,6 +14,6 @@ const MyInfos = () => {
       </h4>
     </>
   );
-}
+};
 
 export default MyInfos;
