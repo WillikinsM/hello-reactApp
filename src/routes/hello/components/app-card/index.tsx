@@ -7,12 +7,17 @@ interface Props {
   link: string;
   hre: string;
 }
+function scrollSmooth(el: any) {
+  console.log(el);
+  let test = el.target;
+  console.log(test);
+}
 
 const AppCard = ({ title, description, link, hre }: Props) => {
   return (
     <a
       className="card-post img-effect1"
-      // onClick={() => scrollSmooth(name[0])}
+      onClick={(Element) => scrollSmooth(Element)}
       href={hre}
     >
       <div className="col">
