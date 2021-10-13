@@ -7,18 +7,25 @@ interface Props {
   link: string;
   hre: string;
 }
-function scrollSmooth(el: any) {
+function scrollSmooth(el: string) {
   console.log(el);
-  let test = el.target;
-  console.log(test);
+
+  let element = document.getElementById(el);
+
+  let offset = element!.offsetTop;
+
+  window.scroll({
+    top: offset - 100,
+    behavior: "smooth",
+  });
 }
 
 const AppCard = ({ title, description, link, hre }: Props) => {
   return (
-    <a
+    <span
       className="card-post img-effect1"
-      onClick={(Element) => scrollSmooth(Element)}
-      href={hre}
+      /*href={hre}*/
+      onClick={() => scrollSmooth(hre)}
     >
       <div className="col">
         <div className="card h-100">
@@ -29,7 +36,7 @@ const AppCard = ({ title, description, link, hre }: Props) => {
           </div>
         </div>
       </div>
-    </a>
+    </span>
   );
 };
 
