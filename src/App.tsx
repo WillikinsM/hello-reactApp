@@ -1,16 +1,19 @@
 import React from "react";
 //import logo from './logo.svg';
 import "./App.scss";
-import Hello from './routes/hello';
+import Hello from "./routes/hello";
 import HeaderNav from "./components/header";
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import FooterEnd from "./components/footer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  return (<>
-    <HeaderNav />
-    <Hello/>
-  </>);
+  return (
+    <>
+      <HeaderNav />
+      <Hello />
+      <FooterEnd />
+    </>
+  );
 }
 
 export default App;
