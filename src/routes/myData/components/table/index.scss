@@ -1,0 +1,23 @@
+table td:first-child {
+  border-left-color: black;
+}
+
+table tbody:last-child tr:last-child td {
+  border-bottom: 4px groove black;
+}
+
+tr:first-child td {
+  border-top: 5px groove black;
+}
+
+table td:last-child {
+  border-right-color: black;
+}
+
+table th {
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+}

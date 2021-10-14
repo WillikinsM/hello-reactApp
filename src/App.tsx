@@ -5,12 +5,14 @@ import Hello from "./routes/hello";
 import HeaderNav from "./components/header";
 import FooterEnd from "./components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import DadosTab from "./routes/myData";
 
 function App() {
   return (
     <>
       <HeaderNav />
       <Hello />
+      <DadosTab />
       <FooterEnd />
     </>
   );
