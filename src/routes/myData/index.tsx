@@ -1,5 +1,6 @@
-import { CreateTable, sortTable } from "./components/table";
+import { CreateRows, SortTableR } from "./components/table";
 import FormTable from "./components/forms";
+import { useState } from "react";
 
 const tableData = [
   { name: "Oto Patama", category: "Música", releaseYear: 2020 },
@@ -21,6 +22,12 @@ const tableData = [
 ];
 
 const DataTab = () => {
+  const [sortingColumn, setSortingColumn] = useState("");
+
+  const [sortingOrder, setSortingOrder] = useState("asc");
+
+  const [sortedColumn, setSortedColumn] = useState("");
+
   return (
     <>
       <div className="data-form">
@@ -33,26 +40,66 @@ const DataTab = () => {
           >
             <thead className="table-dark">
               <tr>
-                <th onClick={() => sortTable(0)} id="my0header">
+
+                <th
+                  className={sortedColumn === "name" ? "text-bold" : ""}
+                  onClick={() => SortTableR()}
+                  id="my0header"
+                >
                   Name
+                  {sortedColumn === "name" && sortingOrder === "asc" ? (
+                    <i className="bi bi-arrow-down-short" />
+                  ) : sortedColumn === "name" && sortingOrder === "desc" ? (
+                    <i className="bi bi-arrow-up-short" />
+                  ) : (
+                    ""
+                  )}
                 </th>
-                <th onClick={() => sortTable(1)} id="my1header">
+
+                <th
+                  className={sortedColumn === "category" ? "text-bold" : ""}
+                  onClick={() => SortTableR()}
+                  id="my1header"
+                >
                   Category
+                  {sortedColumn === "category" && sortingOrder === "asc" ? (
+                    <i className="bi bi-arrow-down-short" />
+                  ) : sortedColumn === "category" && sortingOrder === "desc" ? (
+                    <i className="bi bi-arrow-up-short" />
+                  ) : (
+                    ""
+                  )}
                 </th>
-                <th onClick={() => sortTable(2)} id="my2header">
+
+                <th
+                  className={sortedColumn === "releaseYear" ? "text-bold" : ""}
+                  onClick={() => SortTableR()}
+                  id="my2header"
+                >
                   Release Year
+                  {sortedColumn === "releaseYear" && sortingOrder === "asc" ? (
+                    <i className="bi bi-arrow-down-short" />
+                  ) : sortedColumn === "releaseYear" &&
+                    sortingOrder === "desc" ? (
+                    <i className="bi bi-arrow-up-short" />
+                  ) : (
+                    ""
+                  )}
                 </th>
+
               </tr>
             </thead>
             <tbody>
+
               {tableData.map((item) => (
-                <CreateTable
+                <CreateRows
                   key={item.name}
                   name={item.name}
                   category={item.category}
                   releaseYear={item.releaseYear}
                 />
               ))}
+              
             </tbody>
           </table>
         </div>
@@ -61,4 +108,4 @@ const DataTab = () => {
   );
 };
 
-export default DataTab;
+export { DataTab, tableData };

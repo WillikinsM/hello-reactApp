@@ -1,5 +1,7 @@
 import "./index.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { tableData } from "../..";
+import { useState } from "react";
 
 interface Props {
   name: string;
@@ -7,7 +9,7 @@ interface Props {
   releaseYear: number;
 }
 
-const CreateTable = ({ name, category, releaseYear }: Props) => {
+const CreateRows = ({ name, category, releaseYear }: Props) => {
   return (
     <>
       <tr>
@@ -17,6 +19,18 @@ const CreateTable = ({ name, category, releaseYear }: Props) => {
       </tr>
     </>
   );
+};
+
+const SortTableR = () => {
+  let adjustableValue = tableData;
+
+  adjustableValue.sort((a, b) => {
+    let x = a.category.toLowerCase();
+    let y = b.category.toLowerCase();
+    if (x > y) return -1;
+    if (x < y) return 1;
+    return 0;
+  });
 };
 
 const sortTable = (n: number) => {
@@ -88,4 +102,4 @@ const switchIcon = (n: number, dir: string) => {
   }
 };
 
-export { CreateTable, sortTable };
+export { CreateRows, SortTableR };
