@@ -1,4 +1,5 @@
 import { CreateTable, sortTable } from "./components/table";
+import FormTable from "./components/forms";
 
 const tableData = [
   { name: "Oto Patama", category: "Música", releaseYear: 2020 },
@@ -19,41 +20,45 @@ const tableData = [
   { name: "Mass Effect", category: "Jogo", releaseYear: 2007 },
 ];
 
-const DadosTab = () => {
+const DataTab = () => {
   return (
     <>
-      <div id="my-data">
-        <table
-          className="table table-striped table-bordered table-hover ms-auto"
-          id="my-table"
-        >
-          <thead className="table-dark">
-            <tr>
-              <th onClick={() => sortTable(0)} id="my0header">
-                Name
-              </th>
-              <th onClick={() => sortTable(1)} id="my1header">
-                Category
-              </th>
-              <th onClick={() => sortTable(2)} id="my2header">
-                Release Year
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((item) => (
-              <CreateTable
-                key={item.name}
-                name={item.name}
-                category={item.category}
-                releaseYear={item.releaseYear}
-              />
-            ))}
-          </tbody>
-        </table>
+      <div className="data-form">
+        <FormTable />
+
+        <div id="my-data">
+          <table
+            className="table table-striped table-bordered table-hover ms-auto"
+            id="my-table"
+          >
+            <thead className="table-dark">
+              <tr>
+                <th onClick={() => sortTable(0)} id="my0header">
+                  Name
+                </th>
+                <th onClick={() => sortTable(1)} id="my1header">
+                  Category
+                </th>
+                <th onClick={() => sortTable(2)} id="my2header">
+                  Release Year
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableData.map((item) => (
+                <CreateTable
+                  key={item.name}
+                  name={item.name}
+                  category={item.category}
+                  releaseYear={item.releaseYear}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );
 };
 
-export default DadosTab;
+export default DataTab;
