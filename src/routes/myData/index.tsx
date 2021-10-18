@@ -1,32 +1,58 @@
-import { CreateRows, SortTableR } from "./components/table";
+import React from "react";
 import FormTable from "./components/forms";
-import { useState } from "react";
 
-const tableData = [
-  { name: "Oto Patama", category: "Música", releaseYear: 2020 },
-  { name: "The Office", category: "Série", releaseYear: 2005 },
-  { name: "The Witcher 3", category: "Jogo", releaseYear: 2015 },
-  { name: "Final Fantasy XV", category: "Jogo", releaseYear: 2016 },
-  { name: "Fullmetal Alchmist", category: "Anime", releaseYear: 2009 },
-  { name: "Closed On Sunday", category: "Música", releaseYear: 2019 },
-  { name: "Utopia", category: "Série", releaseYear: 2020 },
-  { name: "In My Room", category: "Música", releaseYear: 2019 },
-  { name: "Real Compton City G's", category: "Música", releaseYear: 1993 },
-  { name: "So Fresh, So Clean", category: "Música", releaseYear: 2000 },
-  { name: "Community", category: "Série", releaseYear: 2009 },
-  { name: "One Piece", category: "Anime", releaseYear: 1997 },
-  { name: "JoJo's Bizarre Adventures", category: "Anime", releaseYear: 2016 },
-  { name: "Apex Legends", category: "Jogo", releaseYear: 2019 },
-  { name: "Spider-Man", category: "Jogo", releaseYear: 2018 },
-  { name: "Mass Effect", category: "Jogo", releaseYear: 2007 },
-];
+import { tableData, CreateRows } from "./components/table";
 
 const DataTab = () => {
-  const [sortingColumn, setSortingColumn] = useState("");
+  const [sortingColumn, setSortingColumn] = React.useState("");
+  const [sortingOrder, setSortingOrder] = React.useState("");
+  const [sortedColumn, setSortedColumn] = React.useState("");
 
-  const [sortingOrder, setSortingOrder] = useState("asc");
+  let adjustableValue = [...tableData];
 
-  const [sortedColumn, setSortedColumn] = useState("");
+  if (sortingColumn === "name") {
+    adjustableValue.sort((a, b) => {
+      if (a.name < b.name) {
+        return sortingOrder === "asc" ? -1 : 1;
+      }
+      if (a.name > b.name) {
+        return sortingOrder === "asc" ? 1 : -1;
+      }
+
+      return 0;
+    });
+  } else if (sortingColumn === "category") {
+    adjustableValue.sort((a, b) => {
+      if (a.category < b.category) {
+        return sortingOrder === "asc" ? -1 : 1;
+      }
+      if (a.category > b.category) {
+        return sortingOrder === "asc" ? 1 : -1;
+      }
+
+      return 0;
+    });
+  } else if (sortingColumn === "releaseYear") {
+    adjustableValue.sort((a, b) => {
+      if (a.releaseYear < b.releaseYear) {
+        return sortingOrder === "asc" ? -1 : 1;
+      }
+      if (a.releaseYear > b.releaseYear) {
+        return sortingOrder === "asc" ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+
+  const sortConfg = (key: string) => {
+    let direction = "asc";
+    if (sortingColumn === key && sortingOrder === "asc") {
+      direction = "desc";
+    }
+    setSortingOrder(direction);
+    setSortingColumn(key);
+    setSortedColumn(key);
+  };
 
   return (
     <>
@@ -40,10 +66,11 @@ const DataTab = () => {
           >
             <thead className="table-dark">
               <tr>
-
                 <th
                   className={sortedColumn === "name" ? "text-bold" : ""}
-                  onClick={() => SortTableR()}
+                  onClick={() => {
+                    sortConfg("name");
+                  }}
                   id="my0header"
                 >
                   Name
@@ -58,7 +85,9 @@ const DataTab = () => {
 
                 <th
                   className={sortedColumn === "category" ? "text-bold" : ""}
-                  onClick={() => SortTableR()}
+                  onClick={() => {
+                    sortConfg("category");
+                  }}
                   id="my1header"
                 >
                   Category
@@ -73,7 +102,9 @@ const DataTab = () => {
 
                 <th
                   className={sortedColumn === "releaseYear" ? "text-bold" : ""}
-                  onClick={() => SortTableR()}
+                  onClick={() => {
+                    sortConfg("releaseYear");
+                  }}
                   id="my2header"
                 >
                   Release Year
@@ -86,12 +117,10 @@ const DataTab = () => {
                     ""
                   )}
                 </th>
-
               </tr>
             </thead>
             <tbody>
-
-              {tableData.map((item) => (
+              {adjustableValue.map((item) => (
                 <CreateRows
                   key={item.name}
                   name={item.name}
@@ -99,7 +128,6 @@ const DataTab = () => {
                   releaseYear={item.releaseYear}
                 />
               ))}
-              
             </tbody>
           </table>
         </div>
@@ -108,4 +136,4 @@ const DataTab = () => {
   );
 };
 
-export { DataTab, tableData };
+export default DataTab;
