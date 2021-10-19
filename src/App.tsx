@@ -1,17 +1,15 @@
 import React from "react";
 import "./App.scss";
-import Hello from "./routes/hello";
 import HeaderNav from "./components/headerNav";
 import FooterEnd from "./components/footer-end";
 import "bootstrap/dist/css/bootstrap.min.css";
-import  DataTab  from "./routes/myData";
+import Routes from "./routes";
 
 function App() {
   return (
     <>
       <HeaderNav />
-      <Hello />
-      <DataTab />
+      <Routes />
       <FooterEnd />
     </>
   );

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import FormTable from "./components/forms";
 
 import { tableData, CreateRows } from "./components/table";
 
 const DataTab = () => {
-  const [sortingColumn, setSortingColumn] = React.useState("");
-  const [sortingOrder, setSortingOrder] = React.useState("");
-  const [sortedColumn, setSortedColumn] = React.useState("");
+  const [sortingColumn, setSortingColumn] = useState("");
+  const [sortingOrder, setSortingOrder] = useState("");
+  const [sortedColumn, setSortedColumn] = useState("");
 
   let adjustableValue = [...tableData];
 
@@ -59,7 +61,7 @@ const DataTab = () => {
       <div className="data-form">
         <FormTable />
 
-        <div id="my-data">
+        <div id="my-table">
           <table
             className="table table-striped table-bordered table-hover ms-auto"
             id="my-table"
@@ -131,6 +133,11 @@ const DataTab = () => {
             </tbody>
           </table>
         </div>
+      </div>
+      <div className="router-button">
+        <Link type="button" className="btn btn-dark" to="/">
+          Go to Home Page
+        </Link>
       </div>
     </>
   );
