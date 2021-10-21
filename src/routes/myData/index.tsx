@@ -1,47 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-
 import FormTable from "./components/forms";
+import { tableData, CreateRows, Pagination } from "./components/table";
 
-import { tableData, CreateRows } from "./components/table";
+let PageSize = 5;
 
 const DataTab = () => {
   const [sortingColumn, setSortingColumn] = useState("");
   const [sortingOrder, setSortingOrder] = useState("");
   const [sortedColumn, setSortedColumn] = useState("");
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   let adjustableValue = [...tableData];
 
-  if (sortingColumn === "name") {
+  if (
+    sortingColumn === "name" ||
+    sortingColumn === "category" ||
+    sortingColumn === "releaseYear"
+  ) {
     adjustableValue.sort((a, b) => {
-      if (a.name < b.name) {
+      if (a[sortingColumn] < b[sortingColumn]) {
         return sortingOrder === "asc" ? -1 : 1;
       }
-      if (a.name > b.name) {
+      if (a[sortingColumn] > b[sortingColumn]) {
         return sortingOrder === "asc" ? 1 : -1;
       }
 
-      return 0;
-    });
-  } else if (sortingColumn === "category") {
-    adjustableValue.sort((a, b) => {
-      if (a.category < b.category) {
-        return sortingOrder === "asc" ? -1 : 1;
-      }
-      if (a.category > b.category) {
-        return sortingOrder === "asc" ? 1 : -1;
-      }
-
-      return 0;
-    });
-  } else if (sortingColumn === "releaseYear") {
-    adjustableValue.sort((a, b) => {
-      if (a.releaseYear < b.releaseYear) {
-        return sortingOrder === "asc" ? -1 : 1;
-      }
-      if (a.releaseYear > b.releaseYear) {
-        return sortingOrder === "asc" ? 1 : -1;
-      }
       return 0;
     });
   }
@@ -55,6 +39,14 @@ const DataTab = () => {
     setSortingColumn(key);
     setSortedColumn(key);
   };
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return adjustableValue.slice(firstPageIndex, lastPageIndex);
+  }, [adjustableValue, currentPage]);
 
   return (
     <>
@@ -122,7 +114,7 @@ const DataTab = () => {
               </tr>
             </thead>
             <tbody>
-              {adjustableValue.map((item) => (
+              {currentTableData.map((item) => (
                 <CreateRows
                   key={item.name}
                   name={item.name}
@@ -132,6 +124,13 @@ const DataTab = () => {
               ))}
             </tbody>
           </table>
+          <Pagination
+            className="pagination-bar"
+            currentPage={currentPage}
+            totalCount={adjustableValue.length}
+            pageSize={PageSize}
+            onPageChange={(page: number) => setCurrentPage(page)}
+          />
         </div>
       </div>
       <div className="router-button">
