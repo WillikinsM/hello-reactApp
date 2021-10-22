@@ -1,15 +1,29 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import FormTable from "./components/forms";
-import { tableData, CreateRows, Pagination } from "./components/table";
+import { tableData, CreateRows } from "./components/table";
+import Pagination from "./components/table/paginator";
 
-let PageSize = 5;
+const PageSize = [
+  {
+    value: 5,
+    label: 5,
+  },
+  {
+    value: 10,
+    label: 10,
+  },
+  {
+    value: 15,
+    label: 15,
+  },
+];
 
 const DataTab = () => {
   const [sortingColumn, setSortingColumn] = useState("");
   const [sortingOrder, setSortingOrder] = useState("");
   const [sortedColumn, setSortedColumn] = useState("");
-
+  const [pageSize, setPagesize] = useState(10);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   let adjustableValue = [...tableData];
 
@@ -25,7 +39,6 @@ const DataTab = () => {
       if (a[sortingColumn] > b[sortingColumn]) {
         return sortingOrder === "asc" ? 1 : -1;
       }
-
       return 0;
     });
   }
@@ -43,10 +56,10 @@ const DataTab = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
+    const firstPageIndex = (currentPage - 1) * pageSize;
+    const lastPageIndex = firstPageIndex + pageSize;
     return adjustableValue.slice(firstPageIndex, lastPageIndex);
-  }, [adjustableValue, currentPage]);
+  }, [adjustableValue, currentPage, pageSize]);
 
   return (
     <>
@@ -128,9 +141,21 @@ const DataTab = () => {
             className="pagination-bar"
             currentPage={currentPage}
             totalCount={adjustableValue.length}
-            pageSize={PageSize}
+            pageSize={pageSize}
             onPageChange={(page: number) => setCurrentPage(page)}
           />
+
+          <label>Row leght:</label>
+          <select
+            value={pageSize}
+            onChange={(e) => setPagesize(parseInt(e.target.value))}
+          >
+            {PageSize.map((item, key) => (
+              <option key={key} value={item.value}>
+                {item.label}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
       <div className="router-button">
