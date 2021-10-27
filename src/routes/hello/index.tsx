@@ -1,5 +1,4 @@
 import AppCard from "./components/app-card";
-import MyInfos from "./components/my-infos/Index";
 import TextsInfo from "./components/info-texts";
 import { Link } from "react-router-dom";
 
@@ -63,9 +62,6 @@ const Hello = () => {
           ))}
         </div>
       </section>
-      <div className="personal-infos">
-        <MyInfos />
-      </div>
       <section>
         {values.map((item) => (
           <TextsInfo
@@ -82,6 +78,9 @@ const Hello = () => {
       <div className="router-button">
         <Link type="button" className="btn btn-dark" to="/table">
           Go to Table
+        </Link>
+        <Link type="button" className="btn btn-dark" to="/infos">
+          Go to My Infos
         </Link>
       </div>
     </>
