@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Hello from "./hello";
 import DataTab from "./myData";
 import MyInfos from "./my-infos/Index";
@@ -45,15 +45,3 @@ const Routes = () => (
   </Router>
 );
 export default Routes;
-
-// */<Breadcrumb>
-//           {routes.map(({ path, label }) => (
-//             <Link key={path} to={path}>
-//               {label}
-//             </Link>
-//           ))}
-//         </Breadcrumb>
-//         <Route component={Hello} path="/" exact />
-//         <Route component={DataTab} path="/table" />
-//         <Route component={MyInfos} path="/infos" />
-//           *
