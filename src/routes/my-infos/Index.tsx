@@ -2,16 +2,20 @@ import "./index.scss";
 import img from "../../assets/sanjis.png";
 import { Link } from "react-router-dom";
 import { useStore } from "../../store/hooks";
+import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { retriveInfos } from "../../store/counterStore";
 
 const MyInfos = observer(() => {
-  retriveInfos();
   const counterStore = useStore("counterStore");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    counterStore.retriveData();
+  }, [counterStore]);
 
   return (
     <>
-      <img className="img-sanji" src={img} alt="Sanji-One Piece" height="200" />
+      <img className="img-sanji" src={img} alt="Sanji" height="200" />
       <h1 className="my-name">{counterStore.name}</h1>
       <h4>
         <em>{counterStore.info}</em>

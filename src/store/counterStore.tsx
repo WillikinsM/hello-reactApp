@@ -1,4 +1,4 @@
-import { observable, observe } from "mobx";
+import { observable } from "mobx";
 import axios from "axios";
 
 export class CounterStore {
@@ -9,25 +9,16 @@ export class CounterStore {
   @observable
   lorem: string = "";
 
-  setName(data: string) {
-    this.name = data;
-  }
-
-  setInfo(data: string) {
-    this.info = data;
-  }
-
-  setLorem(data: string) {
-    this.lorem = data;
-  }
+  @observable
+  retriveData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/infos");
+      console.log(response);
+      this.name = response.data.myName;
+      this.info = response.data.myBasic;
+      this.lorem = response.data.loremIpsum;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
-
-export const retriveInfos = async () => {
-  try {
-    const response = await axios.get("http://localhost:8080/infos");
-    let myData = response.data.map(({ myBasic }: any) => myBasic);
-    return myData;
-  } catch (error) {
-    console.log(error);
-  }
-};

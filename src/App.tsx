@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Routes from "./routes";
 import { StoresProvider, stores } from "./store/store";
 
-function App() {
+const App = () => {
   return (
     <StoresProvider value={stores}>
       <HeaderNav />
@@ -14,6 +14,6 @@ function App() {
       <FooterEnd />
     </StoresProvider>
   );
-}
+};
 
 export default App;
