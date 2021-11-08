@@ -1,15 +1,15 @@
-import { observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import axios from "axios";
 
 export class CounterStore {
-  @observable
   name: string = "";
-  @observable
   info: string = "";
-  @observable
   lorem: string = "";
 
-  @observable
+  constructor() {
+    makeAutoObservable(this);
+  }
+
   retriveData = async () => {
     try {
       const response = await axios.get("http://localhost:8080/infos");

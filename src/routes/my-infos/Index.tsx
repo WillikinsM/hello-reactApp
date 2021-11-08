@@ -2,16 +2,11 @@ import "./index.scss";
 import img from "../../assets/sanjis.png";
 import { Link } from "react-router-dom";
 import { useStore } from "../../store/hooks";
-import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 const MyInfos = observer(() => {
   const counterStore = useStore("counterStore");
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    counterStore.retriveData();
-  }, [counterStore]);
+  counterStore.retriveData();
 
   return (
     <>
