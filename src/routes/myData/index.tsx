@@ -1,5 +1,7 @@
+import { observer } from "mobx-react-lite";
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useTStore } from "../../stores/hooks";
 import FormTable from "./components/forms";
 import { tableData, CreateRows } from "./components/table";
 import Pagination from "./components/table/paginator";
@@ -19,15 +21,17 @@ const PageSize = [
   },
 ];
 
-const DataTab = () => {
+const DataTab = observer(() => {
   const [sortingColumn, setSortingColumn] = useState("");
   const [sortingOrder, setSortingOrder] = useState("");
   const [sortedColumn, setSortedColumn] = useState("");
   const [pageSize, setPagesize] = useState(10);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  let adjustableValue = [...tableData];
+  const tableStore = useTStore("tablestores");
+  tableStore.getTableData();
 
-  if (
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  /*   if (
     sortingColumn === "name" ||
     sortingColumn === "category" ||
     sortingColumn === "releaseYear"
@@ -41,16 +45,18 @@ const DataTab = () => {
       }
       return 0;
     });
-  }
+  } */
 
   const sortConfg = (key: string) => {
     let direction = "asc";
     if (sortingColumn === key && sortingOrder === "asc") {
       direction = "desc";
     }
+
     setSortingOrder(direction);
     setSortingColumn(key);
     setSortedColumn(key);
+    tableStore.sortData(key, direction);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,8 +64,8 @@ const DataTab = () => {
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
-    return adjustableValue.slice(firstPageIndex, lastPageIndex);
-  }, [adjustableValue, currentPage, pageSize]);
+    return tableStore.tableData.slice(firstPageIndex, lastPageIndex);
+  }, [tableStore.tableData, currentPage, pageSize]);
 
   return (
     <>
@@ -127,7 +133,7 @@ const DataTab = () => {
               </tr>
             </thead>
             <tbody>
-              {currentTableData.map((item) => (
+              {currentTableData.map((item: any) => (
                 <CreateRows
                   key={item.name}
                   name={item.name}
@@ -140,7 +146,7 @@ const DataTab = () => {
           <Pagination
             className="pagination-bar"
             currentPage={currentPage}
-            totalCount={adjustableValue.length}
+            totalCount={tableStore.tableData.length}
             pageSize={pageSize}
             onPageChange={(page: number) => setCurrentPage(page)}
           />
@@ -165,6 +171,6 @@ const DataTab = () => {
       </div>
     </>
   );
-};
+});
 
 export default DataTab;
