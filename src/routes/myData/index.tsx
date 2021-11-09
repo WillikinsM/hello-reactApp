@@ -1,9 +1,9 @@
 import { observer } from "mobx-react-lite";
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTStore } from "../../stores/hooks";
 import FormTable from "./components/forms";
-import { tableData, CreateRows } from "./components/table";
+import { CreateRows } from "./components/table";
 import Pagination from "./components/table/paginator";
 
 const PageSize = [
@@ -25,30 +25,17 @@ const DataTab = observer(() => {
   const [sortingColumn, setSortingColumn] = useState("");
   const [sortingOrder, setSortingOrder] = useState("");
   const [sortedColumn, setSortedColumn] = useState("");
-  const [pageSize, setPagesize] = useState(10);
+  const [pageSize, setPagesize] = useState(15);
+  const [currentPage, setCurrentPage] = useState(1);
   const tableStore = useTStore("tablestores");
-  tableStore.getTableData();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  /*   if (
-    sortingColumn === "name" ||
-    sortingColumn === "category" ||
-    sortingColumn === "releaseYear"
-  ) {
-    adjustableValue.sort((a, b) => {
-      if (a[sortingColumn] < b[sortingColumn]) {
-        return sortingOrder === "asc" ? -1 : 1;
-      }
-      if (a[sortingColumn] > b[sortingColumn]) {
-        return sortingOrder === "asc" ? 1 : -1;
-      }
-      return 0;
-    });
-  } */
+  if (tableStore.tableData.length <= 0 || tableStore.nextPage !== currentPage) {
+    tableStore.initialPaginator(currentPage, pageSize);
+  }
 
   const sortConfg = (key: string) => {
     let direction = "asc";
+
     if (sortingColumn === key && sortingOrder === "asc") {
       direction = "desc";
     }
@@ -56,16 +43,19 @@ const DataTab = observer(() => {
     setSortingOrder(direction);
     setSortingColumn(key);
     setSortedColumn(key);
-    tableStore.sortData(key, direction);
+    tableStore.sortedPaginator(
+      sortingColumn,
+      sortingOrder,
+      currentPage,
+      pageSize
+    );
   };
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const currentTableData = useMemo(() => {
+  /* const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
     return tableStore.tableData.slice(firstPageIndex, lastPageIndex);
-  }, [tableStore.tableData, currentPage, pageSize]);
+  }, [tableStore.tableData, currentPage, pageSize]); */
 
   return (
     <>
@@ -133,7 +123,7 @@ const DataTab = observer(() => {
               </tr>
             </thead>
             <tbody>
-              {currentTableData.map((item: any) => (
+              {tableStore.tableData.map((item: any) => (
                 <CreateRows
                   key={item.name}
                   name={item.name}
@@ -150,7 +140,6 @@ const DataTab = observer(() => {
             pageSize={pageSize}
             onPageChange={(page: number) => setCurrentPage(page)}
           />
-
           <label>Row leght:</label>
           <select
             value={pageSize}

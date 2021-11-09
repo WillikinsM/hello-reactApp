@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import axios from "axios";
 
 export class InfosStore {
@@ -13,9 +13,11 @@ export class InfosStore {
   retriveData = async () => {
     try {
       const response = await axios.get("http://localhost:8080/infos");
-      this.name = response.data.myName;
-      this.info = response.data.myBasic;
-      this.lorem = response.data.loremIpsum;
+      runInAction(() => {
+        this.name = response.data.myName;
+        this.info = response.data.myBasic;
+        this.lorem = response.data.loremIpsum;
+      });
     } catch (error) {
       console.log(error);
     }
