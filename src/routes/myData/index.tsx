@@ -19,6 +19,7 @@ const PageSize = [
     value: 15,
     label: 15,
   },
+  { value: 16, label: "ALL" },
 ];
 
 const DataTab = observer(() => {
@@ -29,26 +30,23 @@ const DataTab = observer(() => {
   const [currentPage, setCurrentPage] = useState(1);
   const tableStore = useTStore("tablestores");
 
-  if (tableStore.tableData.length <= 0 || tableStore.nextPage !== currentPage) {
-    tableStore.initialPaginator(currentPage, pageSize);
-  }
+  tableStore.sortedPaginator(
+    sortingColumn,
+    sortingOrder,
+    currentPage,
+    pageSize,
+    tableStore.shouldSort
+  );
 
   const sortConfg = (key: string) => {
     let direction = "asc";
-
     if (sortingColumn === key && sortingOrder === "asc") {
       direction = "desc";
     }
-
     setSortingOrder(direction);
     setSortingColumn(key);
     setSortedColumn(key);
-    tableStore.sortedPaginator(
-      sortingColumn,
-      sortingOrder,
-      currentPage,
-      pageSize
-    );
+    tableStore.setSort(true);
   };
 
   /* const currentTableData = useMemo(() => {
@@ -136,7 +134,11 @@ const DataTab = observer(() => {
           <Pagination
             className="pagination-bar"
             currentPage={currentPage}
-            totalCount={tableStore.tableData.length}
+            totalCount={
+              tableStore.tableData.length === 0
+                ? tableStore.tableData.length
+                : 16
+            }
             pageSize={pageSize}
             onPageChange={(page: number) => setCurrentPage(page)}
           />
