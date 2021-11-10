@@ -51,13 +51,23 @@ export class TableStore {
     this.shouldSort = shouldSort;
   };
 
-  initialPaginator = async (page: number, limit: number) => {
+  paginatorFilter = async (
+    page: number,
+    limit: number,
+    filter: string,
+    index: string
+  ) => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/table?page=${page}&limit=${limit}`
+      const response = await axios.post(
+        `http://localhost:8080/form?page=${page}&limit=${limit}`,
+        {
+          filter: filter,
+          index: index,
+        }
       );
       runInAction(() => {
         this.tableData = response.data.results;
+        console.log(response.data.results);
       });
     } catch (error) {
       console.log(error);
