@@ -4,7 +4,7 @@ import axios from "axios";
 export class TableStore {
   tableData: [] = [];
   shouldSort: boolean = false;
-  counter: number = 1;
+  shouldFilter: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -51,6 +51,11 @@ export class TableStore {
     this.shouldSort = shouldSort;
   };
 
+  setFilter = (shouldFilter: boolean) => {
+    this.shouldFilter = shouldFilter;
+  };
+
+  ///
   paginatorFilter = async (
     page: number,
     limit: number,

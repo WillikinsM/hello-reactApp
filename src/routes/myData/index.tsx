@@ -30,13 +30,15 @@ const DataTab = observer(() => {
   const [currentPage, setCurrentPage] = useState(1);
   const tableStore = useTStore("tablestores");
 
-  tableStore.sortedPaginator(
-    sortingColumn,
-    sortingOrder,
-    currentPage,
-    pageSize,
-    tableStore.shouldSort
-  );
+  if (tableStore.shouldFilter === false) {
+    tableStore.sortedPaginator(
+      sortingColumn,
+      sortingOrder,
+      currentPage,
+      pageSize,
+      tableStore.shouldSort
+    );
+  }
 
   const sortConfg = (key: string) => {
     let direction = "asc";
@@ -48,12 +50,6 @@ const DataTab = observer(() => {
     setSortedColumn(key);
     tableStore.setSort(true);
   };
-
-  /* const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * pageSize;
-    const lastPageIndex = firstPageIndex + pageSize;
-    return tableStore.tableData.slice(firstPageIndex, lastPageIndex);
-  }, [tableStore.tableData, currentPage, pageSize]); */
 
   return (
     <>
