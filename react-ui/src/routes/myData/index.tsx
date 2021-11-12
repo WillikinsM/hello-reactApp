@@ -26,6 +26,7 @@ const DataTab = () => {
   const [pageSize, setPagesize] = useState(10);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   let adjustableValue = [...tableData];
+  let testEnv = process.env.API_URL;
 
   if (
     sortingColumn === "name" ||
@@ -45,12 +46,14 @@ const DataTab = () => {
 
   const sortConfg = (key: string) => {
     let direction = "asc";
+
     if (sortingColumn === key && sortingOrder === "asc") {
       direction = "desc";
     }
     setSortingOrder(direction);
     setSortingColumn(key);
     setSortedColumn(key);
+    console.log(testEnv);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
