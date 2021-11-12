@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FormTable from "./components/forms";
 import { tableData, CreateRows } from "./components/table";
 import Pagination from "./components/table/paginator";
+require("dotenv").config();
 
 const PageSize = [
   {
