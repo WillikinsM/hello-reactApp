@@ -52,7 +52,7 @@ const DataTab = () => {
     setSortingColumn(key);
     setSortedColumn(key);
 
-    console.log(process.env.REACT_APP_API_URL);
+    console.log(process.env);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
