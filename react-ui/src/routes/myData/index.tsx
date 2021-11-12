@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import FormTable from "./components/forms";
 import { tableData, CreateRows } from "./components/table";
 import Pagination from "./components/table/paginator";
-require("dotenv").config();
 
 const PageSize = [
   {
@@ -27,7 +26,6 @@ const DataTab = () => {
   const [pageSize, setPagesize] = useState(10);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   let adjustableValue = [...tableData];
-  let testEnv = process.env.REACT_APP_API_URL;
 
   if (
     sortingColumn === "name" ||
@@ -47,14 +45,14 @@ const DataTab = () => {
 
   const sortConfg = (key: string) => {
     let direction = "asc";
-
     if (sortingColumn === key && sortingOrder === "asc") {
       direction = "desc";
     }
     setSortingOrder(direction);
     setSortingColumn(key);
     setSortedColumn(key);
-    console.log(testEnv);
+
+    console.log(process.env.REACT_APP_API_URL);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
