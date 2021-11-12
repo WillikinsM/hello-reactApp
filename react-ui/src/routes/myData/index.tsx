@@ -26,7 +26,7 @@ const DataTab = () => {
   const [pageSize, setPagesize] = useState(10);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   let adjustableValue = [...tableData];
-  let testEnv = process.env.API_URL;
+  let testEnv = process.env.REACT_APP_API_URL;
 
   if (
     sortingColumn === "name" ||
