@@ -4,6 +4,10 @@ import FormTable from "./components/forms";
 import { tableData, CreateRows } from "./components/table";
 import Pagination from "./components/table/paginator";
 
+import { envs } from "../../config";
+
+console.log(envs);
+
 const PageSize = [
   {
     value: 5,
@@ -51,8 +55,6 @@ const DataTab = () => {
     setSortingOrder(direction);
     setSortingColumn(key);
     setSortedColumn(key);
-
-    console.log(process.env);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
