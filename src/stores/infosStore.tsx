@@ -12,7 +12,6 @@ export class InfosStore {
   }
 
   retriveData = async () => {
-    console.log(envs);
     try {
       const response = await axios.get(`${envs.REACT_APP_API_URL}/infos`);
       runInAction(() => {

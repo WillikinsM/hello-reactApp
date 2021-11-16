@@ -18,7 +18,6 @@ export class TableStore {
     limit: number,
     shouldSort: boolean
   ) => {
-    console.log(envs);
     if (shouldSort === true) {
       try {
         const response = await axios.post(
