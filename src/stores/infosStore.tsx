@@ -1,5 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import axios from "axios";
+import { envs } from "../config";
 
 export class InfosStore {
   name: string = "";
@@ -11,8 +12,9 @@ export class InfosStore {
   }
 
   retriveData = async () => {
+    console.log(envs);
     try {
-      const response = await axios.get("http://localhost:8080/infos");
+      const response = await axios.get(`${envs.REACT_APP_API_URL}/infos`);
       runInAction(() => {
         this.name = response.data.myName;
         this.info = response.data.myBasic;

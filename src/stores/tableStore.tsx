@@ -1,5 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import axios from "axios";
+import { envs } from "../config";
 
 export class TableStore {
   tableData: [] = [];
@@ -17,10 +18,11 @@ export class TableStore {
     limit: number,
     shouldSort: boolean
   ) => {
+    console.log(envs);
     if (shouldSort === true) {
       try {
         const response = await axios.post(
-          `http://localhost:8080/table?page=${page}&limit=${limit}`,
+          `${envs.REACT_APP_API_URL}/table?page=${page}&limit=${limit}`,
           {
             order: order,
             sort: colum,
@@ -36,7 +38,7 @@ export class TableStore {
     } else {
       try {
         const response = await axios.get(
-          `http://localhost:8080/table?page=${page}&limit=${limit}`
+          `${envs.REACT_APP_API_URL}/table?page=${page}&limit=${limit}`
         );
         runInAction(() => {
           this.tableData = response.data.results;
@@ -64,7 +66,7 @@ export class TableStore {
   ) => {
     try {
       const response = await axios.post(
-        `http://localhost:8080/form?page=${page}&limit=${limit}`,
+        `${envs.REACT_APP_API_URL}/form?page=${page}&limit=${limit}`,
         {
           filter: filter,
           index: index,
