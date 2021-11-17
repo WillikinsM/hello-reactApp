@@ -15,7 +15,7 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [x] Reacriar o site criado com javascript vanilla agora utilizando Reactjs 
+- [x] Recriar o site criado com javascript vanilla agora utilizando Reactjs 
 - [x] Implementar tabela dinamica com filtro por palavras e ordenação de dados
 - [x] Implementar paginação na tabela
 - [x] Receber dados da tabela a partir de uma API
