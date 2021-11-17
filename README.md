@@ -26,6 +26,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 ## 📝 Licença
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+Repositorios Auxiliares
+
+[![card](https://github-readme-stats.vercel.app/api/pin/?username=WillikinsM&repo=node-api)](https://github.com/WillikinsM/node-api)
+[![card](https://github-readme-stats.vercel.app/api/pin/?username=WillikinsM&repo=Bootcamp)](https://github.com/WillikinsM/Bootcamp)
+
 
 [⬆ Voltar ao topo](#nome-do-projeto)<br>
