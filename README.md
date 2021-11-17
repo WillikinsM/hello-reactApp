@@ -24,7 +24,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Carregar as "mensagens" a partir da API
 
 
-## 📝 Licença
+## 📝 Diversos
 
 Repositorios Auxiliares
 
