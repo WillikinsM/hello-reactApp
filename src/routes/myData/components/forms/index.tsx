@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
-import { useTStore } from "../../../../stores/hooks";
+import { useTStore } from "../../../../stores";
 import "./index.scss";
 
 const FormTable = observer(() => {

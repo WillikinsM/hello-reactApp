@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useTStore } from "../../stores/hooks";
+import { useTStore } from "../../stores";
 import FormTable from "./components/forms";
 import { CreateRows } from "./components/table";
 import Pagination from "./components/table/paginator";
