@@ -82,6 +82,9 @@ const Hello = () => {
         <Link type="button" className="btn btn-dark" to="/infos">
           Go to My Infos
         </Link>
+        <Link type="button" className="btn btn-dark" to="/message">
+          Go to Messages
+        </Link>
       </div>
     </>
   );

@@ -1,0 +1,108 @@
+.container-fluid {
+  .row > * {
+    width: 35%;
+    padding-right: 1px;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+    border-style: solid;
+    border-width: 0.1px;
+    border-color: rgba($color: #e8e8e8, $alpha: 1);
+  }
+
+  header {
+    padding: 10px 16px;
+    background-color: rgba($color: #ededed, $alpha: 1);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: flex-end;
+
+    .header-img {
+      display: inline-flex;
+      flex-grow: 1;
+      b {
+        margin-left: 20px;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14px;
+        color: rgba($color: #51585c, $alpha: 1);
+        padding-bottom: 3px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+
+    .util-icons {
+      flex: none;
+      color: #51585c;
+      span {
+        display: flex;
+        align-items: center;
+        i {
+          margin: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .search-contacts {
+      background-color: rgba($color: #f6f6f6, $alpha: 1);
+      flex: none;
+
+      .search-contacts-input {
+        background-color: initial;
+        position: relative;
+        box-sizing: border-box;
+        flex: none;
+        height: 49px;
+        .button-clone {
+          left: 24px;
+          position: absolute;
+          top: 10px;
+          width: 24px;
+          height: 24px;
+        }
+        .input-filter {
+          right: 24px;
+          left: 77px;
+          position: absolute;
+          top: 13px;
+          height: 20px;
+          overflow: hidden;
+          font-size: 14px;
+          line-height: 20px;
+          color: rgba($color: #999, $alpha: 1);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          pointer-events: none;
+          transition: opacity 0.14s linear;
+        }
+      }
+    }
+  }
+
+  padding-left: 0%;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .elml-auto > span {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -3,11 +3,13 @@ import Hello from "./hello";
 import DataTab from "./myData";
 import MyInfos from "./my-infos/Index";
 import Breadcrumbs from "../components/breadcrumbs";
+import Messages from "./whats-clone";
 
 const routes = [
   { path: "/", label: "Home", Component: Hello },
   { path: "/table", label: "Table", Component: DataTab },
   { path: "/infos", label: "My-Infos", Component: MyInfos },
+  { path: "/message", label: "Messages", Component: Messages },
 ];
 
 const Routes = () => (
