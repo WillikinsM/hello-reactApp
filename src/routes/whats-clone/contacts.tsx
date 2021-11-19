@@ -7,10 +7,8 @@ const Contacts = () => {
           <div className="header-img">
             <img
               src="https://github.com/mdo.png"
-              alt="hugenerd"
-              width="40"
-              height="40"
-              className="rounded-circle"
+              alt="my profile pic"
+              className="avatar"
             ></img>
             <b className="esemibold">BETA</b>
           </div>
@@ -59,63 +57,313 @@ const Contacts = () => {
           ></input>
         </div>
 
-        <div className="list-group list-group-flush border-bottom scrollarea">
-          <a
-            href="#"
-            className="list-group-item list-group-item-action active py-3 lh-tight"
-            aria-current="true"
-          >
-            <div className="d-flex w-100 align-items-center justify-content-between">
-              <strong className="mb-1">List group item heading</strong>
-              <small>Wed</small>
+        <div className="side-contact-list ">
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
             </div>
-            <div className="col-10 mb-1 small">
-              Some placeholder content in a paragraph below the heading and
-              date.
-            </div>
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action py-3 lh-tight"
-          >
-            <div className="d-flex w-100 align-items-center justify-content-between">
-              <strong className="mb-1">List group item heading</strong>
-              <small className="text-muted">Tues</small>
-            </div>
-            <div className="col-10 mb-1 small">
-              Some placeholder content in a paragraph below the heading and
-              date.
-            </div>
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action py-3 lh-tight"
-          >
-            <div className="d-flex w-100 align-items-center justify-content-between">
-              <strong className="mb-1">List group item heading</strong>
-              <small className="text-muted">Mon</small>
-            </div>
-            <div className="col-10 mb-1 small">
-              Some placeholder content in a paragraph below the heading and
-              date.
-            </div>
-          </a>
 
-          <a
-            href="#"
-            className="list-group-item list-group-item-action py-3 lh-tight"
-            aria-current="true"
-          >
-            <div className="d-flex w-100 align-items-center justify-content-between">
-              <strong className="mb-1">List group item heading</strong>
-              <small className="text-muted">Wed</small>
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Willikins Abreu</h2>
+                <span className="time-tick">Wed</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="col-10 mb-1 small">
-              Some placeholder content in a paragraph below the heading and
-              date.
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Willikins Abreu</h2>
+                <span className="time-tick">Tus</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Willikins Matheus</h2>
+                <span className="time-tick">Wed</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Willikins goncalves</h2>
+                <span className="time-tick">Wed</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Xambras</h2>
+                <span className="time-tick">10:30</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Contato 7</h2>
+                <span className="time-tick">9:00</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://github.com/mdo.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">Willikins Abreu</h2>
+                <span className="time-tick">Wed</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </div>
           </a>
         </div>
+
+        {/* <div className="list-group list-group-flush border-bottom scrollarea">
+          <a
+            href="#"
+            className="list-group-item list-group-item-action py-3 lh-tight"
+            aria-current="true"
+          >
+            <div className="d-flex w-100 align-items-center  ">
+              <div className="contact-avatars">
+                <img
+                  src="https://github.com/mdo.png"
+                  alt="contact progile pic"
+                  className="avatar"
+                />
+              </div>
+              <strong className="mb-1 contacts-name">Contato 1 </strong>
+              <small className="time-tick">Wed</small>
+            </div>
+            <div className="col-10 mb-1 small">
+              Some placeholder content in a paragraph below the heading and
+              date.
+            </div>
+          </a>
+         
+        </div> */}
       </div>
     </>
   );

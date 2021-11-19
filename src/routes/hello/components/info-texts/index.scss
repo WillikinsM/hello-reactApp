@@ -12,16 +12,24 @@
   margin-left: 13%;
   margin-top: 3%;
   padding: 30px;
+ 
 }
 
- .text-paragraph.html-text {
+.text-paragraph.html-text {
   box-shadow: 0 4px 8px 0 #e34f2a, 0 6px 20px 0 #402e2e;
- }
+}
 
- .text-paragraph.cascade-text {
+.text-paragraph.cascade-text {
   box-shadow: 0 4px 8px 0 #2c4de4, 0 6px 20px 0 #402e2e;
 }
 
- .text-paragraph.javascript-text {
-   box-shadow: 0 4px 8px 0 #f7e018, 0 6px 20px 0 #402e2e;
- }
+.text-paragraph.javascript-text {
+  box-shadow: 0 4px 8px 0 #f7e018, 0 6px 20px 0 #402e2e;
+}
+
+p {
+  font-family: Consolas, sans-serif, Calibri, sans-serif;
+  margin-bottom: 20px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+}
