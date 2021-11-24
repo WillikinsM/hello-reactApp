@@ -94,3 +94,17 @@
     justify-content: space-between;
   }
 }
+
+.chat-content {
+  :last-child {
+    :last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+.chat-content {
+  :first-of-type div {
+    margin-top: 50px;
+    margin-bottom: -20px;
+  }
+}

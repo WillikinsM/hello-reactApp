@@ -1,5 +1,4 @@
 import "./index.scss";
-// import scrollSmooth from "./scrollSmth";
 
 interface Props {
   title: string;

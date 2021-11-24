@@ -8,7 +8,7 @@ const Contacts = () => {
         <header className="contact-head">
           <div className="header-img">
             <img
-              src="https://github.com/mdo.png"
+              src="https://avatars.githubusercontent.com/u/41803028?v=4"
               alt="my profile pic"
               className="avatar"
             ></img>
@@ -63,7 +63,7 @@ const Contacts = () => {
           <a href="#" className="contact" aria-current="true">
             <div className="contacts-avatar">
               <img
-                src="https://github.com/mdo.png"
+                src="https://reactjs.org/logo-og.png"
                 alt="contact progile pic"
                 className="avatar"
               />

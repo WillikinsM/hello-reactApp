@@ -5,7 +5,7 @@ const Header = () => {
     <header className="chat-head">
       <div className="contacts-avatar">
         <img
-          src="https://github.com/mdo.png"
+          src="https://avatars.githubusercontent.com/u/41803028?v=4"
           alt="contact name"
           className="avatar"
         />
