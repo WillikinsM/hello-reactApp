@@ -1,0 +1,39 @@
+.chat-head {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 10px;
+  min-height: 60px;
+  background: #ededed;
+  position: fixed;
+  width: 64.5%;
+  .header-contact-info {
+    flex: 1 1;
+    cursor: pointer;
+    .contact-name {
+      color: #000000;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+    .contact-status {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 0.75rem;
+    }
+    .contact-status,
+    .contact-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .header-icons {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    .chat-action-icon {
+      margin-left: 25px;
+      cursor: pointer;
+      color: #919191;
+    }
+  }
+}

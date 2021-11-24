@@ -1,6 +1,8 @@
+import "./index.scss";
+
 const Header = () => {
   return (
-    <header className="chat-header">
+    <header className="chat-head">
       <div className="contacts-avatar">
         <img
           src="https://github.com/mdo.png"

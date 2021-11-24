@@ -1,6 +1,5 @@
-
-import Contacts from "./contacts";
-import Chat from "./chat";
+import { Chat, Home } from "./components/chat";
+import Contacts from "./components/contacts";
 import "./index.scss";
 
 const Messages = () => {

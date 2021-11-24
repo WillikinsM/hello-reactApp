@@ -1,3 +1,5 @@
+import "./index.scss";
+
 const Messages = () => {
   return (
     <div className="chat-content">

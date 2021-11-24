@@ -1,4 +1,25 @@
-import img from "../../assets/intro-connection-light.jpg";
+import img from "../../../../assets/intro-connection-light.jpg";
+import Header from "./chat-header";
+import Footer from "./chat-footer";
+import Messages from "./chat-messages";
+import "./index.scss";
+
+const Chat = () => {
+  return (
+    <>
+      <div className="col py-3">
+        <div className="chat-wrapper">
+          <div className="chat-body">
+            <div className="chat-background"></div>
+            <Header />
+            <Messages />
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 const Home = () => {
   return (
@@ -22,4 +43,4 @@ const Home = () => {
     </>
   );
 };
-export default Home;
+export { Home, Chat };
