@@ -11,7 +11,7 @@ const Header = () => {
         />
       </div>
       <div className="header-contact-info">
-        <h2 className="contact-name">Contato 1</h2>
+        <h2 className="contact-name">Willikins Abreu</h2>
         <p className="contact-status">Online</p>
       </div>
       <div className="header-icons">

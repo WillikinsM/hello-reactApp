@@ -63,7 +63,7 @@ const Contacts = () => {
           <a href="#" className="contact" aria-current="true">
             <div className="contacts-avatar">
               <img
-                src="https://reactjs.org/logo-og.png"
+                src="https://avatars.githubusercontent.com/u/41803028?v=4"
                 alt="contact progile pic"
                 className="avatar"
               />
@@ -72,6 +72,45 @@ const Contacts = () => {
             <div className="contact-content">
               <div className="contact-top-content">
                 <h2 className="contact-name">Willikins Abreu</h2>
+                <span className="time-tick">Wed</span>
+              </div>
+              <div className="contact-bottom-content">
+                <p className="message-wrapper">
+                  <span className="last-message">
+                    Some placeholder content in a paragraph below the heading
+                    and date faadfdfdsfs.
+                  </span>
+                </p>
+                <div className="content-icons">
+                  <span aria-label="contact-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 19 20"
+                      width="19"
+                      height="20"
+                      className="sidebar-contact-icon"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="#" className="contact" aria-current="true">
+            <div className="contacts-avatar">
+              <img
+                src="https://reactjs.org/logo-og.png"
+                alt="contact progile pic"
+                className="avatar"
+              />
+            </div>
+            <div className="contact-content">
+              <div className="contact-top-content">
+                <h2 className="contact-name">ReactGroup</h2>
                 <span className="time-tick">Wed</span>
               </div>
               <div className="contact-bottom-content">

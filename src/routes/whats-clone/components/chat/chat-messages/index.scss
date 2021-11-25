@@ -71,6 +71,7 @@
   .chat-msg,
   .msg-rec {
     height: fit-content;
+    justify-content: space-between;
     .msg-footer-time {
       position: absolute;
       display: flex;
@@ -81,27 +82,28 @@
       font-weight: 400;
       color: rgba(0, 0, 0, 0.45);
     }
-    .msg-top {
-      position: absolute;
-      display: inline-flex;
-      align-items: flex-start;
-      bottom: 25px;
-      font-weight: 700;
-      font-size: 12.8px;
-      line-height: 22px;
-      color: #dfb610;
-    }
-    justify-content: space-between;
   }
 }
 
+.chat-contact-name {
+  position: absolute;
+  top: -5px;
+  left: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #dfb610;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
 .chat-content {
-  :last-child {
-    :last-child {
-      margin-bottom: 20px;
-    }
+  div {
+    margin-bottom: 4%;
   }
 }
+
 .chat-content {
   :first-of-type div {
     margin-top: 50px;

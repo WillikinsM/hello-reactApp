@@ -9,7 +9,12 @@ const Messages = () => {
         </div>
         <div className="chat-msg-wrapper">
           <p className="chat-msg msg-rec">
-            <span>asfkjahfahfiuhehfbsdffddddddddd</span>
+            <small className="chat-contact-name">Willikins</small>
+            <span>
+              His confidence would have bee admirable if it wasn't for his
+              stupidity. It's not possible to convince a monkey to give you a
+              banana by promising it infinite bananas when they die.
+            </span>
             <span className="msg-footer-time">11:00</span>
           </p>
 
@@ -36,6 +41,7 @@ const Messages = () => {
           </p>
         </div>
       </div>
+
       <div>
         <div className="chat-date-wrapper">
           <span className="chat-date">YESTERDAY</span>
@@ -67,6 +73,7 @@ const Messages = () => {
           </p>
         </div>
       </div>
+
       <div>
         <div className="chat-date-wrapper">
           <span className="chat-date">TODAY</span>
