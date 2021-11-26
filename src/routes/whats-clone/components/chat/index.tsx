@@ -4,6 +4,81 @@ import Footer from "./chat-footer";
 import Messages from "./chat-messages";
 import "./index.scss";
 
+const Users = [
+  {
+    id: 1,
+    name: "John Doe",
+    dates: {
+      "04/06/2021": [
+        {
+          content: "mesage 1",
+          sender: 1,
+          time: "08:11",
+        },
+        {
+          content: "message 2",
+          sender: null,
+          time: "08:15",
+        },
+        {
+          content: "message 3",
+          sender: 1,
+          time: "09:11",
+        },
+        {
+          content: "message 2",
+          sender: null,
+          time: "09:15",
+        },
+      ],
+      TODAY: [
+        {
+          content: "mesage 1",
+          sender: 1,
+          time: "08:11",
+        },
+        {
+          content: "message 2",
+          sender: null,
+          time: "08:15",
+        },
+        {
+          content: "message 3",
+          sender: 1,
+          time: "09:11",
+        },
+        {
+          content: "message 2",
+          sender: null,
+          time: "09:15",
+        },
+      ],
+      YESTERDAY: [
+        {
+          content: "mesage 1",
+          sender: 1,
+          time: "08:11",
+        },
+        {
+          content: "message 2",
+          sender: null,
+          time: "08:15",
+        },
+        {
+          content: "message 3",
+          sender: 1,
+          time: "09:11",
+        },
+        {
+          content: "message 2",
+          sender: null,
+          time: "09:15",
+        },
+      ],
+    },
+  },
+];
+
 const Chat = () => {
   return (
     <>

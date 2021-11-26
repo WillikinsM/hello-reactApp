@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from "react-router-dom";
 import "./index.scss";
 
 const Contacts = () => {
@@ -60,7 +61,7 @@ const Contacts = () => {
         </div>
 
         <div className="side-contact-list ">
-          <a href="#" className="contact" aria-current="true">
+          <Link to="#" className="contact" aria-current="true">
             <div className="contacts-avatar">
               <img
                 src="https://avatars.githubusercontent.com/u/41803028?v=4"
@@ -99,8 +100,9 @@ const Contacts = () => {
                 </div>
               </div>
             </div>
-          </a>
-          <a href="#" className="contact" aria-current="true">
+          </Link>
+
+          {/* <Link to="chat/:id" className="contact" aria-current="true">
             <div className="contacts-avatar">
               <img
                 src="https://reactjs.org/logo-og.png"
@@ -138,7 +140,7 @@ const Contacts = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link> */}
         </div>
       </div>
     </>
