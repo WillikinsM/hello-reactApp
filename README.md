@@ -20,8 +20,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Implementar paginação na tabela
 - [x] Receber dados da tabela a partir de uma API
 - [x] Realizar deploy do App no heroku
-- [ ] Criar uma nova pagina que imita o whatsapp
-- [ ] Carregar as "mensagens" a partir da API
+- [x] Criar uma nova pagina que imita o whatsapp
+- [x] Carregar as "mensagens" a partir da API
 
 
 ## 📝 Diversos
