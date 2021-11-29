@@ -9,15 +9,19 @@ import {
   stores,
   TStoresProvider,
   tstores,
+  MStoresProvider,
+  mstores,
 } from "./stores/store";
 
 const App = () => {
   return (
     <StoresProvider value={stores}>
       <TStoresProvider value={tstores}>
-        <HeaderNav />
-        <Routes />
-        <FooterEnd />
+        <MStoresProvider value={mstores}>
+          <HeaderNav />
+          <Routes />
+          <FooterEnd />
+        </MStoresProvider>
       </TStoresProvider>
     </StoresProvider>
   );

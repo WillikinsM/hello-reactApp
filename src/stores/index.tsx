@@ -1,3 +1,3 @@
-import { useTStore, useStore } from "./hooks";
+import { useTStore, useStore, useMStore } from "./hooks";
 
-export { useTStore, useStore };
+export { useTStore, useStore, useMStore };

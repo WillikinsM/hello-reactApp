@@ -1,5 +1,6 @@
 import React from "react";
 import { InfosStore } from "./infosStore";
+import { MessageStore } from "./messageStore";
 import { TableStore } from "./tableStore";
 
 export const stores = Object.freeze({
@@ -15,3 +16,10 @@ export const tstores = Object.freeze({
 
 export const tstoresContext = React.createContext(tstores);
 export const TStoresProvider = tstoresContext.Provider;
+
+export const mstores = Object.freeze({
+  messageStore: new MessageStore(),
+});
+
+export const mstoresContext = React.createContext(mstores);
+export const MStoresProvider = mstoresContext.Provider;

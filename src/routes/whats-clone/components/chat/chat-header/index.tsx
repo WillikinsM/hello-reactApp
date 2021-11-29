@@ -1,17 +1,34 @@
+import { observer } from "mobx-react-lite";
+import { useMStore } from "../../../../../stores";
 import "./index.scss";
 
-const Header = () => {
+const Header = observer(() => {
+  const messageStore = useMStore("messageStore");
+
+  let username: any = messageStore.contactList;
+
+  let img = "https://avatars.githubusercontent.com/u/41803028?v=4";
+
+  if (username[messageStore.chatId - 1].group === true) {
+    img = "https://reactjs.org/logo-og.png";
+  } else if (username[messageStore.chatId - 1].id === 2) {
+    img =
+      "https://cdn.icon-icons.com/icons2/2630/PNG/512/avatar_woman_people_girl_glasses_icon_159125.png";
+  } else if (username[messageStore.chatId - 1].id === 3) {
+    img = "https://cdn-icons-png.flaticon.com/512/53/53060.png";
+  }
+
   return (
     <header className="chat-head">
       <div className="contacts-avatar">
-        <img
-          src="https://avatars.githubusercontent.com/u/41803028?v=4"
-          alt="contact name"
-          className="avatar"
-        />
+        <img src={img} alt="contact name" className="avatar" />
       </div>
       <div className="header-contact-info">
-        <h2 className="contact-name">Willikins Abreu</h2>
+        <h2 className="contact-name">
+          {username[messageStore.chatId - 1].group === true
+            ? "React Group"
+            : username[messageStore.chatId - 1].user}
+        </h2>
         <p className="contact-status">Online</p>
       </div>
       <div className="header-icons">
@@ -46,6 +63,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;
