@@ -17,7 +17,7 @@ export class MessageStore {
     /* if (this.oldChatID !== id) { */
     try {
       const response = await axios.get(
-        `https://will-api.herokuapp.com/message/chat${id}`
+        `${envs.REACT_APP_API_URL}/message/chat${id}`
       );
       runInAction(() => {
         /* this.oldChatID = id; */
@@ -32,7 +32,7 @@ export class MessageStore {
   retriveContact = async () => {
     try {
       const response = await axios.get(
-        `https://will-api.herokuapp.com/message/chat`
+        `${envs.REACT_APP_API_URL}/message/chat`
       );
       runInAction(() => {
         this.contactList = response.data;
