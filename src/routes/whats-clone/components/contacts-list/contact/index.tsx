@@ -1,5 +1,6 @@
 import { observer } from "mobx-react-lite";
 import moment from "moment";
+import { useEffect } from "react";
 import { useMStore } from "../../../../../stores";
 
 interface Props {
@@ -22,6 +23,10 @@ const Contact = observer(({ user, content, timestamp, group, id }: Props) => {
     img = "https://cdn-icons-png.flaticon.com/512/53/53060.png";
   }
 
+  useEffect(() => {
+    messageStore.retriveMessage(messageStore.chatId);
+  }, [messageStore, messageStore.chatId]);
+
   return (
     <div
       className="contact"
@@ -37,7 +42,9 @@ const Contact = observer(({ user, content, timestamp, group, id }: Props) => {
           <h2 className="contact-name">
             {group === true ? "React Group" : user}
           </h2>
-          <span className="time-tick">{moment(timestamp).format("dddd")}</span>
+          <span className="time-tick">
+            {moment(new Date(timestamp)).format("dddd")}
+          </span>
         </div>
         <div className="contact-bottom-content">
           <p className="message-wrapper">

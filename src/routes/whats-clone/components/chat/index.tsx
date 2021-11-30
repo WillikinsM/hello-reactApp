@@ -4,12 +4,8 @@ import Footer from "./chat-footer";
 import Messages from "./chat-messages";
 import "./index.scss";
 import { observer } from "mobx-react-lite";
-import { useMStore } from "../../../../stores";
 
 const Chat = observer(() => {
-  const messageStore = useMStore("messageStore");
-  messageStore.retriveMessage(messageStore.chatId);
-
   return (
     <>
       <div className="col py-3">

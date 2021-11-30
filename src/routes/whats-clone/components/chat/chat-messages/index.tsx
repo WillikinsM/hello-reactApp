@@ -1,13 +1,18 @@
 import { observer } from "mobx-react-lite";
+import { useLayoutEffect, useRef } from "react";
 import { useMStore } from "../../../../../stores";
 import Content from "../message";
 import "./index.scss";
 
 const Messages = observer(() => {
   const messageStore = useMStore("messageStore");
-  messageStore.retriveMessage(messageStore.chatId);
+  const scrollAux = useRef<HTMLDivElement>(null);
 
-  let messages = messageStore.messageData;
+  useLayoutEffect(() => {
+    if (scrollAux.current) {
+      scrollAux.current.scrollIntoView(true);
+    }
+  });
 
   return (
     <div className="chat-content">
@@ -15,7 +20,7 @@ const Messages = observer(() => {
         {/*  <div className="chat-date-wrapper">
           <span className="chat-date">{Object.keys(user[0].dates)[0]}</span>
         </div>  */}
-        {messages.map((item: any, index) => (
+        {messageStore.messageData.map((item: any, index) => (
           <Content
             key={index}
             content={item.content}
@@ -25,6 +30,7 @@ const Messages = observer(() => {
             user={item.user}
           />
         ))}
+        <div id={"scrollAux"} ref={scrollAux} />
       </div>
     </div>
   );

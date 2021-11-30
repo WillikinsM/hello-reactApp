@@ -15,6 +15,7 @@ const Content = ({ content, timestamp, self, group, user }: Props) => {
     "msg-rec": !self,
     "msg-send": self,
   });
+
   return (
     <div className="chat-msg-wrapper">
       <p className={messageClass}>
@@ -23,7 +24,7 @@ const Content = ({ content, timestamp, self, group, user }: Props) => {
         ) : null}
         <span>{content}</span>
         <span className="msg-footer-time">
-          {moment(timestamp).format("LT")}
+          {moment(new Date(timestamp)).format("LT")}
         </span>
       </p>
     </div>
