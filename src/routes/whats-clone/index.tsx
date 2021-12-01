@@ -9,10 +9,12 @@ const Messages = observer(() => {
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="row flex-nowrap">
-          <ContactsList />
-          {messageStore.chatId === 0 ? <Home /> : <Chat />}
+      <div className="messages">
+        <div className="container-fluid">
+          <div className="row flex-nowrap">
+            <ContactsList />
+            {messageStore.chatId === 0 ? <Home /> : <Chat />}
+          </div>
         </div>
       </div>
     </>

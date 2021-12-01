@@ -4,8 +4,8 @@
   .row > * {
     width: 35%;
     padding-right: 1px;
-    max-height: calc(100vh - 9rem);
-    overflow-y: auto;
+    max-height: calc(100vh - 5.6rem);
+    overflow-y: hidden;
     border-style: solid;
     border-width: 0.1px;
     border-color: rgba($color: #e8e8e8, $alpha: 1);
@@ -63,6 +63,7 @@
     flex-direction: column;
     z-index: 1;
     transform: translateZ(0);
+    height: calc(100vh - 40px);
   }
 }
 

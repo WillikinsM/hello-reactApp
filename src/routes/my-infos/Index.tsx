@@ -3,6 +3,7 @@ import img from "../../assets/sanjis.png";
 import { Link } from "react-router-dom";
 import { useStore } from "../../stores/hooks";
 import { observer } from "mobx-react-lite";
+import FooterEnd from "../../components/footer-end";
 
 const MyInfos = observer(() => {
   const infosStore = useStore("infosStore");
@@ -20,6 +21,7 @@ const MyInfos = observer(() => {
       <Link type="button" className="btn btn-dark" to="/">
         Go to Home Page
       </Link>
+      <FooterEnd />
     </>
   );
 });

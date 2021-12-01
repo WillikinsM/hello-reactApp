@@ -1,6 +1,7 @@
 import AppCard from "./components/app-card";
 import TextsInfo from "./components/info-texts";
 import { Link } from "react-router-dom";
+import FooterEnd from "../../components/footer-end";
 
 const Hello = () => {
   const values = [
@@ -86,6 +87,7 @@ const Hello = () => {
           Go to Messages
         </Link>
       </div>
+      <FooterEnd />
     </>
   );
 };

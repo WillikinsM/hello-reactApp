@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import FooterEnd from "../../components/footer-end";
 import { useTStore } from "../../stores";
 import FormTable from "./components/forms";
 import { CreateRows } from "./components/table";
@@ -156,6 +157,7 @@ const DataTab = observer(() => {
           Go to Home Page
         </Link>
       </div>
+      <FooterEnd />
     </>
   );
 });
