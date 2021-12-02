@@ -23,6 +23,7 @@
     margin-bottom: 12px;
     position: relative;
   }
+
   .chat-msg-wrapper {
     flex-direction: column;
   }
@@ -37,6 +38,34 @@
     font-size: 14.2px;
     line-height: 22px;
   }
+
+  .chat-img-msg,
+  .chat-img-wrapper {
+    display: flex;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .chat-img-wrapper {
+    flex-direction: column;
+  }
+
+  .chat-img-msg {
+    padding: 18px 12px 20px 10px;
+    color: #000000;
+    width: min-content;
+    border-radius: 5px;
+    white-space: pre-line;
+    font-size: 14.2px;
+    line-height: 22px;
+  }
+
+  .chat-img {
+    width: 40%;
+    min-width: 300px;
+    max-width: 400px;
+  }
+
   .msg-rec {
     background: #fff;
     align-self: flex-start;

@@ -28,6 +28,7 @@ const Messages = observer(() => {
             self={item.self}
             group={item.group}
             user={item.user}
+            type={item.type}
           />
         ))}
         <div id={"scrollAux"} ref={scrollAux} />
